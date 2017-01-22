@@ -1,5 +1,5 @@
 #include <stdio.h>
 main ()
 {
-printf ("This is a c program. \c");
+printf ("This is a c program. \n");
 }
