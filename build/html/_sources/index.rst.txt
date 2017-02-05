@@ -1,0 +1,25 @@
+.. zhd0305 documentation master file, created by
+   sphinx-quickstart on Sun Feb  5 22:52:51 2017.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+rst文档（sphinx docs）学习使用记录
+===================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   
+   /docs/git install notes
+   /code/CPL study notes
+   
+   
+   
+   
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
