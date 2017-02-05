@@ -11,7 +11,7 @@ Welcome to zhd0305_sphinx_doc's documentation!
 
 
    章节编号
-   CPL study notes
+   code/CPL study notes
 
 
 尝试学习使用Sphinx编写技术文档
