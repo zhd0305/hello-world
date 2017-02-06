@@ -16,7 +16,10 @@ struct student
 
 int n;
 
-struct student * creat () /*此函数带回一个指向链表头的指针 */
+
+
+
+struct student * creat() /*此函数带回一个指向链表头的指针 */
 {
 	struct student * head;
 	struct student * p1,* p2;
@@ -58,13 +61,15 @@ struct student * head;
 		}while(p!=NULL);
 }
 
-
-
-
 main ()
 {
-creat(3);
-print(head);
+  struct student * head;
+  printf("input records:\n");
+  head=creat();
+  print(head);
 
 }
+
+
+
 

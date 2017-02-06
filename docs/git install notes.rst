@@ -1,6 +1,10 @@
 git install note
 =================
 
+[dong@localhost ~]$ git --version
+git version 1.8.3.1
+[dong@localhost ~]$ 
+
 [dong@localhost ~]$ pwd
 /home/dong
 [dong@localhost ~]$ ssh-keygen -t rsa -C "zhd0305"
@@ -91,3 +95,43 @@ Resolving deltas: 100% (22/22), done.
 total 4
 drwxrwxr-x. 4 dong dong 4096 Feb  5 11:23 hello-world
 [dong@localhost learngit]$ 
+
+[dong@localhost learngit]$ ll
+total 4
+drwxrwxr-x. 4 dong dong 4096 Feb  5 11:23 hello-world
+[dong@localhost learngit]$ ll /hello-world
+ls: cannot access /hello-world: No such file or directory
+
+[dong@localhost learngit]$ ll ./hello-world
+total 28
+-rw-rw-r--. 1 dong dong   24 Feb  5 11:23 ADT
+drwxrwxr-x. 2 dong dong 4096 Feb  5 11:23 code
+-rw-rw-r--. 1 dong dong  924 Feb  5 11:23 CPL study notes.rst
+drwxrwxr-x. 2 dong dong   72 Feb  5 14:33 docs
+-rw-rw-r--. 1 dong dong  805 Feb  5 11:23 index_old.rst
+-rw-rw-r--. 1 dong dong  789 Feb  5 11:23 index.rst
+-rw-rw-r--. 1 dong dong  579 Feb  5 11:23 README.md
+-rw-rw-r--. 1 dong dong  627 Feb  5 11:23 章节编号.rst
+[dong@localhost learngit]$ cd ./hello-world/docs
+[dong@localhost docs]$ ll
+total 4
+-rw-rw-r--. 1 dong dong 3656 Feb  5 11:24 git install notes.rst
+[dong@localhost docs]$ git add git\ install\ notes.rst
+[dong@localhost docs]$ git commit -m "add a notes"
+[master 6844faf] add a notes
+ 1 file changed, 93 insertions(+)
+ create mode 100644 docs/git install notes.rst
+[dong@localhost docs]$ git remote -v
+origin  git@github.com:zhd0305/hello-world.git (fetch)
+origin  git@github.com:zhd0305/hello-world.git (push)
+[dong@localhost docs]$ git push origin master
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 1.78 KiB | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To git@github.com:zhd0305/hello-world.git
+   ebb452a..6844faf  master -> master
+[dong@localhost docs]$ 
+
