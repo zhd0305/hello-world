@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>单链表学习记录 &#8212; zhd0305 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="The C Programming Language 学习笔记" href="CPL study notes.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>单链表学习记录<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><div class="highlight-default"><div class="highlight"><pre><span></span>[dong@localhost code]$ more list1.c
+
+#define NULL 0
+#define LEN sizeof (struct student)
+
+/*2017-01-24： centos下vim不方便输入中文，用SecureCRT远程登录后就可以比
+较方便的录入中文了！ */
+/*隐式声明与内建函数‘malloc’不兼容 [默认启用],增加头文件说明 */
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+struct student
+{
+                long num;
+                float score;
+                struct student * next;
+};
+
+int n;
+
+
+
+
+struct student * creat() /*此函数带回一个指向链表头的指针 */
+{
+                struct student * head;
+                struct student * p1,* p2;
+                n = 0;
+                p1 = p2 = (struct student *)malloc(LEN); /* malloc 开辟一个结点
+，让p1、p2都指向它 */
+
+ /*在一般系统中，malloc带回的是指向字符型数据的指针， 这里使用了强制类型
+转换的方法，用（struct student *）来把malloc（）带回的指向字符类型数据的
+指针强制转换为指向struct student类型数据的指针 */
+
+                scanf(&quot;%ld,%f&quot;,&amp;p1-&gt;num,&amp;p1-&gt;score);
+                head = NULL;
+
+                while (p1-&gt;num!=0)
+                                {
+                                n=n+1;
+                                if(n== 1)head = p1;
+                                else p2-&gt;next = p1;
+                                p2 = p1;
+                                p1 = (struct student *)malloc(LEN);
+                                scanf(&quot;%ld,%f&quot;,&amp;p1-&gt;num,&amp;p1-&gt;score);
+                                }
+
+                p2-&gt;next = NULL;
+                return(head);
+
+
+}
+
+void print(head)
+struct student * head;
+{
+                struct student *p;
+                printf(&quot;\nNow,These %d records are:\n&quot;,n);
+                p = head;
+                if(head!=NULL)
+                                do
+                                {
+                                printf(&quot;%ld %5.1f\n&quot;,p-&gt;num,p-&gt;score);
+                                p = p-&gt;next;
+                                }while(p!=NULL);
+}
+
+main ()
+{
+  struct student * head;
+  printf(&quot;input records:\n&quot;);
+  head=creat();
+  print(head);
+
+}
+</pre></div>
+</div>
+</div></blockquote>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> code]$</p>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> code]$ cc list1.c</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>[dong@localhost code]$ ./a.out
+input records:
+85698789,88
+0
+
+Now,These 1 records are:
+85698789  88.0
+
+
+::
+
+[dong@localhost code]$ ./a.out
+input records:
+888888888,85
+203,89
+5230147,90
+8632158,88
+863214587,95
+5632,72
+0
+
+Now,These 6 records are:
+888888888  85.0
+203  89.0
+5230147  90.0
+8632158  88.0
+863214587  95.0
+5632  72.0
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="CPL study notes.html" title="上一章">The C Programming Language 学习笔记</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/code/slist learning notes.rst.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, zhd0305.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../_sources/code/slist learning notes.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

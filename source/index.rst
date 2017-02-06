@@ -3,6 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+hello-world项目里的sphinx文档
+=================================
+
+
+   
 rst文档（sphinx docs）学习使用记录
 ===================================
 
@@ -12,6 +17,7 @@ rst文档（sphinx docs）学习使用记录
    
    /docs/git install notes
    /code/CPL study notes
+   code/slist learning notes
    
    
    
