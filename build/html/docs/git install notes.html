@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>git install note &#8212; zhd0305 0.1 文档</title>
+    <title>1. git install note &#8212; zhd0305 0.1 文档</title>
     
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -28,7 +28,7 @@
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="The C Programming Language 学习笔记" href="../code/CPL study notes.html" />
+    <link rel="next" title="2. The C Programming Language 学习笔记" href="../code/CPL study notes.html" />
     <link rel="prev" title="hello-world项目里的sphinx文档" href="../index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -46,7 +46,14 @@
           <div class="body" role="main">
             
   <div class="section" id="git-install-note">
-<h1>git install note<a class="headerlink" href="#git-install-note" title="永久链接至标题">¶</a></h1>
+<h1>1. git install note<a class="headerlink" href="#git-install-note" title="永久链接至标题">¶</a></h1>
+<p>2017-02-06：</p>
+<p>已经在办公虚拟机上完成了git克隆同步的操作。</p>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> learngit]$ git pull <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:zhd0305/hello-world.git</p>
+<p>执行git pull从远端下拉数据时，要先明确在什么目录下，要执行pwd命令查看当期目录，确认是准确的项目文件目录下才能执行git pull命令。</p>
+<p>否则很容易把项目文件抓取到上级目录中！</p>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> learngit]$ git clone <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:zhd0305/hello-world.git</p>
+<p>这个命令是把远程的项目文件克隆到当前目录下。</p>
 <p>。。。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>[dong@localhost ~]$ pwd
 /home/dong
@@ -155,7 +162,7 @@ drwxrwxr-x. 4 dong dong 4096 Feb  5 11:23 hello-world
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
       <li>Previous: <a href="../index.html" title="上一章">hello-world项目里的sphinx文档</a></li>
-      <li>Next: <a href="../code/CPL study notes.html" title="下一章">The C Programming Language 学习笔记</a></li>
+      <li>Next: <a href="../code/CPL study notes.html" title="下一章">2. The C Programming Language 学习笔记</a></li>
   </ul></li>
 </ul>
 </div>
@@ -184,7 +191,7 @@ drwxrwxr-x. 4 dong dong 4096 Feb  5 11:23 hello-world
       &copy;2017, zhd0305.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |

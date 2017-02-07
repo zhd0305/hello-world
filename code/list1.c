@@ -1,6 +1,7 @@
 #define NULL 0
 #define LEN sizeof (struct student)
 
+//2017-2-7 LEN 代表struct student结构体类型数据的长度，sizeof 是“求字节数运算符”
 /*2017-01-24： centos下vim不方便输入中文，用SecureCRT远程登录后就可以比较方便的录入中文了！ */
 /*隐式声明与内建函数‘malloc’不兼容 [默认启用],增加头文件说明 */
 
