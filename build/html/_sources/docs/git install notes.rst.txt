@@ -1,5 +1,19 @@
 git install note
 =================
+2017-02-06：
+
+已经在办公虚拟机上完成了git克隆同步的操作。
+
+[dong@localhost learngit]$ git pull git@github.com:zhd0305/hello-world.git
+
+执行git pull从远端下拉数据时，要先明确在什么目录下，要执行pwd命令查看当期目录，确认是准确的项目文件目录下才能执行git pull命令。
+
+否则很容易把项目文件抓取到上级目录中！
+
+[dong@localhost learngit]$ git clone git@github.com:zhd0305/hello-world.git
+
+这个命令是把远程的项目文件克隆到当前目录下。
+
 
 。。。 ::
 
