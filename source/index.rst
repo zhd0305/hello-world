@@ -12,7 +12,8 @@ rst文档（sphinx docs）学习使用记录
 ===================================
 
 .. toctree::
-   :maxdepth: 2
+   :numbered:
+   :maxdepth: 3
    :caption: Contents:
    
    /docs/git install notes
