@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1. git install note &#8212; zhd0305 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="2. The C Programming Language 学习笔记" href="../code/CPL study notes.html" />
+    <link rel="prev" title="hello-world项目里的sphinx文档" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="git-install-note">
+<h1>1. git install note<a class="headerlink" href="#git-install-note" title="永久链接至标题">¶</a></h1>
+<p>2017-02-06：</p>
+<p>已经在办公虚拟机上完成了git克隆同步的操作。</p>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> learngit]$ git pull <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:zhd0305/hello-world.git</p>
+<p>执行git pull从远端下拉数据时，要先明确在什么目录下，要执行pwd命令查看当期目录，确认是准确的项目文件目录下才能执行git pull命令。</p>
+<p>否则很容易把项目文件抓取到上级目录中！</p>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> learngit]$ git clone <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:zhd0305/hello-world.git</p>
+<p>这个命令是把远程的项目文件克隆到当前目录下。</p>
+<p>。。。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>[dong@localhost ~]$ pwd
+/home/dong
+[dong@localhost ~]$ ssh-keygen -t rsa -C &quot;zhd0305&quot;
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/dong/.ssh/id_rsa):
+Created directory &#39;/home/dong/.ssh&#39;.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/dong/.ssh/id_rsa.
+Your public key has been saved in /home/dong/.ssh/id_rsa.pub.
+The key fingerprint is:
+ac:71:f8:c3:a9:20:78:78:75:3d:e2:3a:18:81:57:38 zhd0305
+The key&#39;s randomart image is:
++--[ RSA 2048]----+
+|   .             |
+|  E .            |
+| . o             |
+|. o    +         |
+| . .. = S        |
+| o.. o B o       |
+|o +o. o =        |
+| o...o . .       |
+|    ...          |
++-----------------+
+</pre></div>
+</div>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> ~]$ ls</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">out</span>    <span class="n">Documents</span>  <span class="n">hello</span><span class="o">.</span><span class="n">c</span>  <span class="n">Pictures</span>  <span class="n">Templates</span>  <span class="n">test2</span><span class="o">.</span><span class="n">c</span>  <span class="n">test</span><span class="o">.</span><span class="n">c</span>
+<span class="n">Desktop</span>  <span class="n">Downloads</span>  <span class="n">Music</span>    <span class="n">Public</span>    <span class="n">test</span>       <span class="n">test3</span><span class="o">.</span><span class="n">c</span>  <span class="n">Videos</span>
+</pre></div>
+</div>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> ~]$ ls ./.ssh</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">id_rsa</span>  <span class="n">id_rsa</span><span class="o">.</span><span class="n">pub</span>
+</pre></div>
+</div>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> ~]$ more ./.ssh/id_rsa.pub</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">rsa</span> <span class="n">AAAAB3NzaC1yc2EAAAADAQABAAABAQCzBUaBjdhCmm7t2sbe0get9K05ogUtXCzn</span>
+<span class="n">klO5EfhiUpmpg8khsblubTtI93VuxB7iLMZ2NIF5suYH4y23rqJRzPdX</span><span class="o">/</span><span class="n">ePDBNBwCFqAKIRq</span>
+<span class="n">stJBzok125Xh</span><span class="o">+</span><span class="n">Ma</span><span class="o">+</span><span class="n">unlKAFqI4LEwWxzEg4So9RWq</span><span class="o">+</span><span class="n">wO8LAfVYezYcDpo6C23ZiNVj1J9dVAJ</span>
+<span class="n">WKlelhnYctOYsTYxW</span><span class="o">/</span><span class="n">Hl0P9GPQIQl68A</span><span class="o">/</span><span class="n">ayO</span><span class="o">/</span><span class="n">VUSk58Y1</span><span class="o">/</span><span class="n">WPAdg7jrV3v498FJYgBEeiD95V</span>
+<span class="n">jv2LLcOBINBXkooKVMqpsKUbZHBQP8Xc</span><span class="o">/</span><span class="n">uKoFSIFLjKvrIUCxVsgOz12u2cYR3JfJJfWXLj5</span>
+<span class="n">jJYthYQFkvXxILVXdSQ7</span> <span class="n">zhd0305</span>
+</pre></div>
+</div>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> ~]$</p>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> ~]$ ll</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="mi">40</span>
+<span class="o">-</span><span class="n">rwxrwxr</span><span class="o">-</span><span class="n">x</span><span class="o">.</span> <span class="mi">1</span> <span class="n">dong</span> <span class="n">dong</span> <span class="mi">8555</span> <span class="n">Jan</span> <span class="mi">22</span> <span class="mi">09</span><span class="p">:</span><span class="mi">58</span> <span class="n">a</span><span class="o">.</span><span class="n">out</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="o">.</span> <span class="mi">2</span> <span class="n">dong</span> <span class="n">dong</span>    <span class="mi">6</span> <span class="n">Sep</span>  <span class="mi">3</span> <span class="mi">16</span><span class="p">:</span><span class="mi">40</span> <span class="n">Desktop</span>
+<span class="n">drwxrwxr</span><span class="o">-</span><span class="n">x</span><span class="o">.</span> <span class="mi">2</span> <span class="n">dong</span> <span class="n">dong</span>   <span class="mi">34</span> <span class="n">Feb</span>  <span class="mi">5</span> <span class="mi">10</span><span class="p">:</span><span class="mi">58</span> <span class="n">docs</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="o">.</span> <span class="mi">2</span> <span class="n">dong</span> <span class="n">dong</span>    <span class="mi">6</span> <span class="n">Sep</span>  <span class="mi">3</span> <span class="mi">16</span><span class="p">:</span><span class="mi">40</span> <span class="n">Documents</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="o">.</span> <span class="mi">2</span> <span class="n">dong</span> <span class="n">dong</span>   <span class="mi">52</span> <span class="n">Feb</span>  <span class="mi">4</span> <span class="mi">14</span><span class="p">:</span><span class="mi">39</span> <span class="n">Downloads</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--.</span> <span class="mi">1</span> <span class="n">dong</span> <span class="n">dong</span>   <span class="mi">59</span> <span class="n">Jan</span> <span class="mi">17</span> <span class="mi">22</span><span class="p">:</span><span class="mi">09</span> <span class="n">hello</span><span class="o">.</span><span class="n">c</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="o">.</span> <span class="mi">2</span> <span class="n">dong</span> <span class="n">dong</span>    <span class="mi">6</span> <span class="n">Sep</span>  <span class="mi">3</span> <span class="mi">16</span><span class="p">:</span><span class="mi">40</span> <span class="n">Music</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="o">.</span> <span class="mi">2</span> <span class="n">dong</span> <span class="n">dong</span>    <span class="mi">6</span> <span class="n">Sep</span>  <span class="mi">3</span> <span class="mi">16</span><span class="p">:</span><span class="mi">40</span> <span class="n">Pictures</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="o">.</span> <span class="mi">2</span> <span class="n">dong</span> <span class="n">dong</span>    <span class="mi">6</span> <span class="n">Sep</span>  <span class="mi">3</span> <span class="mi">16</span><span class="p">:</span><span class="mi">40</span> <span class="n">Public</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="o">.</span> <span class="mi">2</span> <span class="n">dong</span> <span class="n">dong</span>    <span class="mi">6</span> <span class="n">Sep</span>  <span class="mi">3</span> <span class="mi">16</span><span class="p">:</span><span class="mi">40</span> <span class="n">Templates</span>
+<span class="o">-</span><span class="n">rwxrwxr</span><span class="o">-</span><span class="n">x</span><span class="o">.</span> <span class="mi">1</span> <span class="n">dong</span> <span class="n">dong</span> <span class="mi">8502</span> <span class="n">Jan</span> <span class="mi">17</span> <span class="mi">13</span><span class="p">:</span><span class="mi">02</span> <span class="n">test</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--.</span> <span class="mi">1</span> <span class="n">root</span> <span class="n">root</span>  <span class="mi">275</span> <span class="n">Jan</span> <span class="mi">21</span> <span class="mi">15</span><span class="p">:</span><span class="mi">10</span> <span class="n">test2</span><span class="o">.</span><span class="n">c</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--.</span> <span class="mi">1</span> <span class="n">dong</span> <span class="n">dong</span>  <span class="mi">334</span> <span class="n">Jan</span> <span class="mi">22</span> <span class="mi">09</span><span class="p">:</span><span class="mi">58</span> <span class="n">test3</span><span class="o">.</span><span class="n">c</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--.</span> <span class="mi">1</span> <span class="n">dong</span> <span class="n">dong</span>   <span class="mi">67</span> <span class="n">Jan</span> <span class="mi">21</span> <span class="mi">14</span><span class="p">:</span><span class="mi">24</span> <span class="n">test</span><span class="o">.</span><span class="n">c</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span><span class="o">.</span> <span class="mi">2</span> <span class="n">dong</span> <span class="n">dong</span>    <span class="mi">6</span> <span class="n">Sep</span>  <span class="mi">3</span> <span class="mi">16</span><span class="p">:</span><span class="mi">40</span> <span class="n">Videos</span>
+</pre></div>
+</div>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> ~]$ mkdir learngit
+[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> ~]$ cd learngit/</p>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> learngit]$ pwd
+/home/dong/learngit</p>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> learngit]$ git init
+Initialized empty Git repository in /home/dong/learngit/.git/
+[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> learngit]$ ll
+total 0
+[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> learngit]$</p>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> ~]$ git config &#8211;global user.name &#8220;zhd0305&#8221;</p>
+<p>git clone <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:zhd0305/hello-world.git</p>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> learngit]$ ll
+total 0</p>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> learngit]$ git clone <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:zhd0305/hello-world.git</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Cloning into &#39;hello-world&#39;...
+The authenticity of host &#39;github.com (192.30.253.112)&#39; can&#39;t be established.
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added &#39;github.com,192.30.253.112&#39; (RSA) to the list of known hosts.
+remote: Counting objects: 60, done.
+remote: Total 60 (delta 0), reused 0 (delta 0), pack-reused 60
+Receiving objects: 100% (60/60), 15.74 KiB | 5.00 KiB/s, done.
+Resolving deltas: 100% (22/22), done.
+</pre></div>
+</div>
+<p>[<a class="reference external" href="mailto:dong&#37;&#52;&#48;localhost">dong<span>&#64;</span>localhost</a> learngit]$ ll</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>total 4
+drwxrwxr-x. 4 dong dong 4096 Feb  5 11:23 hello-world
+[dong@localhost learngit]$
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="上一章">hello-world项目里的sphinx文档</a></li>
+      <li>Next: <a href="../code/CPL study notes.html" title="下一章">2. The C Programming Language 学习笔记</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/docs/git install notes.rst.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, zhd0305.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../_sources/docs/git install notes.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
