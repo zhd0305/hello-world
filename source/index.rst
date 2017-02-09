@@ -3,13 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-hello-world项目里的sphinx文档
+zhd0305的hello-world
 =================================
 
+sphinx安装后sphinx-quickstart配置要越简单越好！否则在导入readthedocs项目时容易造成构建文档失败！
 
-   
-rst文档（sphinx docs）学习使用记录
-===================================
+
 
 .. toctree::
    :numbered:
