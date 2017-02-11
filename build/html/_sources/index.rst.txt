@@ -16,6 +16,7 @@ sphinx安装后sphinx-quickstart配置要越简单越好！否则在导入readth
    :caption: Contents:
    
    docs/rst_primer
+   code/programmer_growing_plan
    /docs/git install notes
    /code/CPL study notes
    /code/data_structure_algorithm_analysis
