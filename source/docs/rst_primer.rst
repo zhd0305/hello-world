@@ -1,0 +1,72 @@
+reStructuredText(rst)快速入门语法说明
+#############################################
+
+::
+
+	| 线块 用来标识换行的语法
+	
+	
+* ``#`` with overline, for parts
+* ``*`` with overline, for chapters
+* ``=``, for sections
+* ``-``, for subsections
+* ``^``, for subsubsections
+* ``"``, for paragraphs
+
+http://www.cnblogs.com/seayxu/p/5603876.html
+
+Sphinx 使用手册
+http://zh-sphinx-doc.readthedocs.io/en/latest/contents.html
+http://www.sphinx-doc.org/en/stable/contents.html
+
+reStructuredText入门
+http://www.pythondoc.com/sphinx/rest.html#rst-primer
+
+章节标题
+
+章节头部由下线(也可有上线)和包含标点的标题 组合创建, 其中下线要至少等于标准文本的长度。
+
+可以表示标题的符号有 =、-、`、:、'、"、~、^、_ 、* 、+、 #、<、> 。
+
+对于相同的符号，有上标是一级标题，没有上标是二级标题。
+
+标题最多分六级，可以自由组合使用。
+
+全加上上标或者是全不加上标，使用不同的 6 个符号的标题依次排列，则会依次生成的标题为H1-H6。
+
+通常没有专门的符号表示标题的等级，但是对于Python 文档，可以这样认为:
+
+* ``#`` 及上划线表示部分
+* ``*`` 及上划线表示章节
+* ``=``, 小章节
+* ``-``, 子章节
+* ``^``, 子章节的子章节
+* ``"``, 段落
+
+
+
+2级标题
+*************
+
+3级标题
+=============
+
+4级标题
+----------
+
+5级标题
+^^^^^^^^^^^
+6级标题
+~~~~~~~~
+
+~~~~~~~~~~~
+7级标题？
+~~~~~~~~~~~
+
+
+
+
+
+
+
+

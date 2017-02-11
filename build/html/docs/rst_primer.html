@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1. reStructuredText(rst)快速入门语法说明 &#8212; zhd0305 0.1 文档</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="2. git install note" href="git install notes.html" />
+    <link rel="prev" title="zhd0305的hello-world" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="restructuredtext-rst">
+<h1>1. reStructuredText(rst)快速入门语法说明<a class="headerlink" href="#restructuredtext-rst" title="永久链接至标题">¶</a></h1>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">线块</span> <span class="n">用来标识换行的语法</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">#</span></code> with overline, for parts</li>
+<li><code class="docutils literal"><span class="pre">*</span></code> with overline, for chapters</li>
+<li><code class="docutils literal"><span class="pre">=</span></code>, for sections</li>
+<li><code class="docutils literal"><span class="pre">-</span></code>, for subsections</li>
+<li><code class="docutils literal"><span class="pre">^</span></code>, for subsubsections</li>
+<li><code class="docutils literal"><span class="pre">&quot;</span></code>, for paragraphs</li>
+</ul>
+<p><a class="reference external" href="http://www.cnblogs.com/seayxu/p/5603876.html">http://www.cnblogs.com/seayxu/p/5603876.html</a></p>
+<p>Sphinx 使用手册
+<a class="reference external" href="http://zh-sphinx-doc.readthedocs.io/en/latest/contents.html">http://zh-sphinx-doc.readthedocs.io/en/latest/contents.html</a>
+<a class="reference external" href="http://www.sphinx-doc.org/en/stable/contents.html">http://www.sphinx-doc.org/en/stable/contents.html</a></p>
+<p>reStructuredText入门
+<a class="reference external" href="http://www.pythondoc.com/sphinx/rest.html#rst-primer">http://www.pythondoc.com/sphinx/rest.html#rst-primer</a></p>
+<p>章节标题</p>
+<p>章节头部由下线(也可有上线)和包含标点的标题 组合创建, 其中下线要至少等于标准文本的长度。</p>
+<p>可以表示标题的符号有 =、-、<a href="#id1"><span class="problematic" id="id2">`</span></a>、:、&#8217;、&#8221;、~、^、_ 、* 、+、 #、&lt;、&gt; 。</p>
+<p>对于相同的符号，有上标是一级标题，没有上标是二级标题。</p>
+<p>标题最多分六级，可以自由组合使用。</p>
+<p>全加上上标或者是全不加上标，使用不同的 6 个符号的标题依次排列，则会依次生成的标题为H1-H6。</p>
+<p>通常没有专门的符号表示标题的等级，但是对于Python 文档，可以这样认为:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">#</span></code> 及上划线表示部分</li>
+<li><code class="docutils literal"><span class="pre">*</span></code> 及上划线表示章节</li>
+<li><code class="docutils literal"><span class="pre">=</span></code>, 小章节</li>
+<li><code class="docutils literal"><span class="pre">-</span></code>, 子章节</li>
+<li><code class="docutils literal"><span class="pre">^</span></code>, 子章节的子章节</li>
+<li><code class="docutils literal"><span class="pre">&quot;</span></code>, 段落</li>
+</ul>
+<div class="section" id="id3">
+<h2>1.1. 2级标题<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h3>1.1.1. 3级标题<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id5">
+<h4>1.1.1.1. 4级标题<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h4>
+<div class="section" id="id6">
+<h5>1.1.1.1.1. 5级标题<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h5>
+<div class="section" id="id7">
+<h6>1.1.1.1.1.1. 6级标题<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h6>
+<div class="section" id="id8">
+<h7>1.1.1.1.1.1.1. 7级标题？<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h7>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">1. reStructuredText(rst)快速入门语法说明</a><ul>
+<li><a class="reference internal" href="#id3">1.1. 2级标题</a><ul>
+<li><a class="reference internal" href="#id4">1.1.1. 3级标题</a><ul>
+<li><a class="reference internal" href="#id5">1.1.1.1. 4级标题</a><ul>
+<li><a class="reference internal" href="#id6">1.1.1.1.1. 5级标题</a><ul>
+<li><a class="reference internal" href="#id7">1.1.1.1.1.1. 6级标题</a><ul>
+<li><a class="reference internal" href="#id8">1.1.1.1.1.1.1. 7级标题？</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="上一章">zhd0305的hello-world</a></li>
+      <li>Next: <a href="git install notes.html" title="下一章">2. git install note</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/docs/rst_primer.rst.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, zhd0305.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../_sources/docs/rst_primer.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
