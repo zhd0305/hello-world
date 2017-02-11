@@ -79,9 +79,143 @@
 </div>
 <div class="section" id="id7">
 <h4>4.3.2.2. 链表<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h4>
+<div class="line-block">
+<div class="line">链表 linked list</div>
+<div class="line">每一个结构（结构体）均含有表元素和指向包含该元素后继元的结构的指针。next指针，最后一个单元的next指针指向null；</div>
+<div class="line">指针变量就是包含存储另外某个数据的地址的变量。</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </div>
 <div class="section" id="id8">
 <h4>4.3.2.3. 程序设计细节<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h4>
+<div class="line-block">
+<div class="line">增加标志结点</div>
+<div class="line">表头 header  或哑结点 dummy node</div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#ifndef _List_H</span>
+
+<span class="n">struct</span> <span class="n">Node</span><span class="p">;</span>
+<span class="n">typedef</span> <span class="n">struct</span> <span class="n">Node</span> <span class="o">*</span><span class="n">PtrToNode</span><span class="p">;</span>
+<span class="n">typedef</span> <span class="n">PtrToNode</span> <span class="n">List</span><span class="p">;</span>
+<span class="n">typedef</span> <span class="n">PtrToNode</span> <span class="n">Position</span><span class="p">;</span>
+
+<span class="n">List</span> <span class="n">MakeEmpty</span><span class="p">(</span> <span class="n">List</span> <span class="n">L</span> <span class="p">);</span>
+<span class="nb">int</span> <span class="n">IsEmpty</span><span class="p">(</span> <span class="n">List</span> <span class="n">L</span> <span class="p">);</span>
+<span class="nb">int</span> <span class="n">IsLast</span><span class="p">(</span> <span class="n">Position</span> <span class="n">P</span><span class="p">,</span> <span class="n">List</span> <span class="n">L</span> <span class="p">);</span>
+<span class="n">Position</span> <span class="n">Find</span><span class="p">(</span> <span class="n">ElemenType</span> <span class="n">X</span><span class="p">,</span> <span class="n">List</span> <span class="n">L</span> <span class="p">);</span>
+<span class="n">void</span> <span class="n">Delete</span><span class="p">(</span> <span class="n">ElemenType</span> <span class="n">X</span><span class="p">,</span><span class="n">List</span> <span class="n">L</span> <span class="p">);</span>
+<span class="n">Position</span> <span class="n">FindPrevious</span><span class="p">(</span> <span class="n">ElemenType</span> <span class="n">X</span><span class="p">,</span><span class="n">List</span> <span class="n">L</span> <span class="p">);</span>
+<span class="n">void</span> <span class="n">Insert</span><span class="p">(</span> <span class="n">ElemenType</span> <span class="n">X</span><span class="p">,</span><span class="n">List</span> <span class="n">L</span><span class="p">,</span> <span class="n">Position</span> <span class="n">P</span> <span class="p">);</span>
+<span class="n">void</span> <span class="n">DeleteList</span><span class="p">(</span> <span class="n">List</span> <span class="n">L</span> <span class="p">);</span>
+<span class="n">Position</span> <span class="n">Header</span><span class="p">(</span> <span class="n">List</span> <span class="n">L</span> <span class="p">);</span>
+<span class="n">Position</span> <span class="n">First</span><span class="p">(</span> <span class="n">List</span> <span class="n">L</span> <span class="p">);</span>
+<span class="n">Position</span> <span class="n">Advance</span><span class="p">(</span> <span class="n">Position</span> <span class="n">P</span> <span class="p">);</span>
+<span class="n">ElemenType</span> <span class="n">Retrieve</span><span class="p">(</span> <span class="n">Position</span> <span class="n">P</span> <span class="p">);</span>
+
+<span class="c1">#endif   /*  _List_H*/</span>
+
+<span class="o">/*</span> <span class="n">Place</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">implementation</span> <span class="n">file</span> <span class="o">*/</span>
+<span class="n">struct</span> <span class="n">Node</span>
+<span class="p">{</span>
+        <span class="n">ElemenType</span> <span class="n">Element</span><span class="p">;</span>
+        <span class="n">Position</span> <span class="n">Next</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>链表的类型声明</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/*</span>  <span class="n">Return</span> <span class="n">true</span> <span class="k">if</span> <span class="n">L</span> <span class="ow">is</span> <span class="n">empty</span> <span class="o">*/</span>
+<span class="nb">int</span>
+<span class="n">IsEmpty</span><span class="p">(</span> <span class="n">List</span> <span class="n">L</span> <span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">return</span> <span class="n">L</span><span class="o">-&gt;</span><span class="n">Next</span> <span class="o">==</span> <span class="n">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>测试一个链表是否是空表的函数</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">Return</span> <span class="n">true</span> <span class="k">if</span> <span class="n">P</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">last</span> <span class="n">position</span> <span class="ow">in</span> <span class="nb">list</span> <span class="n">L</span>  <span class="o">*/</span>
+<span class="o">/*</span> <span class="n">Parameter</span> <span class="n">L</span> <span class="ow">is</span> <span class="n">unused</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">implementation</span> <span class="o">*/</span>
+
+<span class="nb">int</span>
+<span class="n">IsLast</span><span class="p">(</span> <span class="n">Position</span> <span class="n">P</span><span class="p">,</span> <span class="n">List</span> <span class="n">L</span> <span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">return</span> <span class="n">P</span><span class="o">-&gt;</span><span class="n">Next</span> <span class="o">==</span> <span class="n">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>测试当前位置是否是链表的末尾的函数</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>        <span class="o">/*</span> <span class="n">Return</span> <span class="n">Position</span> <span class="n">of</span> <span class="n">X</span> <span class="ow">in</span> <span class="n">L</span><span class="p">;</span> <span class="n">NULL</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">found</span> <span class="o">*/</span>
+
+        <span class="n">Position</span>
+        <span class="n">Find</span><span class="p">(</span> <span class="n">ElemenType</span> <span class="n">X</span><span class="p">,</span> <span class="n">List</span> <span class="n">L</span> <span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">Position</span> <span class="n">P</span><span class="p">;</span>
+<span class="o">/*</span> <span class="mi">1</span><span class="o">*/</span>  <span class="n">P</span> <span class="o">=</span> <span class="n">L</span><span class="o">-&gt;</span><span class="n">Next</span><span class="p">;</span>
+<span class="o">/*</span> <span class="mi">2</span><span class="o">*/</span>  <span class="k">while</span><span class="p">(</span> <span class="n">P</span> <span class="o">!=</span> <span class="n">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">P</span><span class="o">-&gt;</span><span class="n">Element</span> <span class="o">!=</span> <span class="n">X</span> <span class="p">)</span>
+<span class="o">/*</span> <span class="mi">3</span><span class="o">*/</span>          <span class="n">P</span> <span class="o">=</span> <span class="n">P</span><span class="o">-&gt;</span><span class="n">Next</span><span class="p">;</span>
+
+<span class="o">/*</span><span class="mi">4</span> <span class="o">*/</span>  <span class="k">return</span> <span class="n">P</span><span class="p">;</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
+<p>Find 例程</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>/* Delete first occurrence of X from a list */
+/* Assume use of a header node */
+void
+Delete( ElemenType X,List L )
+{
+        Position P, TmpCell;
+        P = FindPrevious( X,L );
+        if( !IsLast( P,L ))     /*Assumption of header use */
+        {                           /*X is found; delete it */
+                TmpCell = P-&gt;Next;
+                P-&gt;Next = TmpCell-&gt;Next;        /* Bypass delete cell */
+                free( TmpCell );
+        }
+}
+</pre></div>
+</div>
+<p>链表的删除例程</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">If</span> <span class="n">X</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">found</span><span class="p">,</span><span class="n">then</span> <span class="n">Next</span> <span class="n">field</span> <span class="n">of</span> <span class="k">return</span> <span class="o">*/</span>
+<span class="o">/*</span> <span class="n">Position</span> <span class="ow">is</span> <span class="n">NULL</span> <span class="o">*/</span>
+<span class="o">/*</span> <span class="n">Assumes</span> <span class="n">a</span> <span class="n">header</span> <span class="o">*/</span>
+
+        <span class="n">Position</span>
+        <span class="n">FindPrevious</span><span class="p">(</span> <span class="n">ElemenType</span> <span class="n">X</span><span class="p">,</span> <span class="n">List</span> <span class="n">L</span> <span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">Position</span> <span class="n">P</span><span class="p">;</span>
+<span class="o">/*</span> <span class="mi">1</span><span class="o">*/</span>  <span class="n">P</span> <span class="o">=</span> <span class="n">L</span><span class="p">;</span>
+<span class="o">/*</span> <span class="mi">2</span><span class="o">*/</span>  <span class="k">while</span><span class="p">(</span> <span class="n">P</span><span class="o">-&gt;</span><span class="n">Next</span> <span class="o">!=</span> <span class="n">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">P</span><span class="o">-&gt;</span><span class="n">Next</span><span class="o">-&gt;</span><span class="n">Element</span> <span class="o">!=</span> <span class="n">X</span> <span class="p">)</span>
+<span class="o">/*</span> <span class="mi">3</span><span class="o">*/</span>          <span class="n">P</span> <span class="o">=</span> <span class="n">P</span><span class="o">-&gt;</span><span class="n">Next</span><span class="p">;</span>
+
+<span class="o">/*</span> <span class="mi">4</span><span class="o">*/</span>          <span class="k">return</span> <span class="n">P</span><span class="p">;</span>
+
+        <span class="p">}</span>
+</pre></div>
+</div>
+<p>FindPrevious&#8212;为与Delete 一起使用的Find例程</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>        <span class="o">/*</span> <span class="n">Insert</span> <span class="p">(</span><span class="n">after</span> <span class="n">legal</span> <span class="n">position</span> <span class="n">P</span> <span class="o">*/</span>
+        <span class="o">/*</span> <span class="n">Header</span> <span class="n">implementation</span> <span class="n">assumed</span> <span class="o">*/</span>
+        <span class="o">/*</span> <span class="n">Parameter</span> <span class="n">L</span> <span class="ow">is</span> <span class="n">unused</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">implementation</span><span class="o">*/</span>
+
+        <span class="n">void</span>
+        <span class="n">Insert</span><span class="p">(</span><span class="n">ElemenType</span> <span class="n">X</span><span class="p">,</span> <span class="n">List</span> <span class="n">L</span><span class="p">,</span> <span class="n">Position</span> <span class="n">P</span> <span class="p">)</span>
+        <span class="p">{</span>
+                <span class="n">Position</span> <span class="n">TmpCell</span><span class="p">;</span>
+
+<span class="o">/*</span> <span class="mi">1</span><span class="o">*/</span>  <span class="n">TmpCell</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span> <span class="n">sizeof</span><span class="p">(</span> <span class="n">struct</span> <span class="n">Node</span> <span class="p">));</span>
+<span class="o">/*</span> <span class="mi">2</span><span class="o">*/</span>  <span class="k">if</span><span class="p">(</span> <span class="n">TmpCell</span> <span class="o">==</span> <span class="n">NULL</span> <span class="p">)</span>
+<span class="o">/*</span> <span class="mi">3</span><span class="o">*/</span>          <span class="n">FatalError</span><span class="p">(</span> <span class="s2">&quot;Out of space!!!&quot;</span><span class="p">);</span>
+
+<span class="o">/*</span> <span class="mi">4</span><span class="o">*/</span>  <span class="n">TmpCell</span><span class="o">-&gt;</span><span class="n">Element</span> <span class="o">=</span> <span class="n">X</span><span class="p">;</span>
+<span class="o">/*</span> <span class="mi">5</span><span class="o">*/</span>  <span class="n">TmpCell</span><span class="o">-</span><span class="n">Next</span> <span class="o">=</span> <span class="n">P</span><span class="o">-&gt;</span><span class="n">Next</span><span class="p">;</span>
+<span class="o">/*</span> <span class="mi">6</span><span class="o">*/</span>  <span class="n">P</span><span class="o">-&gt;</span><span class="n">Next</span> <span class="o">=</span> <span class="n">TmpCell</span><span class="p">;</span>
+<span class="o">/*</span> <span class="o">*/</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
+<p>链表的插入例程</p>
 </div>
 </div>
 </div>
@@ -181,7 +315,7 @@
       &copy;2017, zhd0305.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
       |
