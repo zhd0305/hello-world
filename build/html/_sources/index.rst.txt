@@ -21,6 +21,7 @@ sphinx安装后sphinx-quickstart配置要越简单越好！否则在导入readth
    /code/CPL study notes
    /code/data_structure_algorithm_analysis
    code/slist learning notes
+   code/book_excerpt
    
    
    
