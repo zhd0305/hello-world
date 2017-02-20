@@ -81,37 +81,84 @@
 </ul>
 <div class="section" id="id2">
 <h4>7.1.1.1. 应用程序层面的工作流程<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h4>
-</div>
+<img alt="../_images/workflow01.png" src="../_images/workflow01.png" />
 <div class="section" id="id3">
-<h4>7.1.1.2. 构建单个程序的工作流程<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h4>
-</div>
+<h5>7.1.1.1.1. 步骤1：定义需求和标准<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h5>
+<p>变更是需求收集工作的基本特征。能做的最好的事情就是集中力量，完成此时此刻的应用程序的明确功能。</p>
+<p>站在用户的立场去考虑他们合乎逻辑的真实需要。</p>
+<p>需求确定应用于每个程序的标准；
+命名规范和编码标准</p>
+<blockquote>
+<div>团队的每个成员以类似的风格编写程序代码。</div></blockquote>
+<dl class="docutils">
+<dt>SQL访问</dt>
+<dd>SQL语句是程序代码中最易变的元素，会随着表结构和表之间关系随时变化。
+查询、更新和其他SQL操作是导致大部分应用程序性能问题的根源。
+对于PL/SQL程序代码中的SQL语句，需要预先设定在程序代码中使用SQL的时间、位置和方式。</dd>
+<dt>错误管理</dt>
+<dd>对错误的抛出、处理和传递方式要予以规范，否则当问题出现时，用户将很难理解如何处理问题，开发人员调试和修改应用程序会更加困难。</dd>
+</dl>
 </div>
 <div class="section" id="id4">
-<h3>7.1.2. 真正的程序员会遵循标准<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<h5>7.1.1.1.2. 步骤2：建立应用程序基础<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h5>
+<dl class="docutils">
+<dt>建立支持这些规则能够被遵循的正式过程</dt>
+<dd>提出清晰定义的流程，以及支持工具，让开发人员可以毫不费力地遵循这些规则。</dd>
+<dt>规则实现自动化</dt>
+<dd>让规则能自动执行。</dd>
+<dt>命名规范和编码标准</dt>
+<dd>团队的每个成员以类似的风格编写程序代码。创建代码模板和代码片段供参考。</dd>
+<dt>SQL访问</dt>
+<dd>SQL语句是程序代码中最易变的元素，会随着表结构和表之间关系随时变化。
+查询、更新和其他SQL操作是导致大部分应用程序性能问题的根源。
+对于PL/SQL程序代码中的SQL语句，需要预先设定在程序代码中使用SQL的时间、位置和方式。
+把数据访问当作一个服务，而不是当作需要反复编写的代码。
+SQL使用规则：不要编写它！</dd>
+<dt>错误管理</dt>
+<dd>对错误的抛出、处理和传递方式要予以规范，否则当问题出现时，用户将很难理解如何处理问题，开发人员调试和修改应用程序会更加困难。
+实现应用程序范围层面的，一致性错误日志、错误抛出和处理机制的最佳方式是，使开发团队使用单个、共享的软件包（所使用的数据库表是经过精心设计的）来完成这个任务。</dd>
+</dl>
 </div>
 <div class="section" id="id5">
-<h3>7.1.3. 编译后的工作<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<h5>7.1.1.1.3. 步骤3：创建下一个应用程序迭代<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h5>
 </div>
 <div class="section" id="id6">
-<h3>7.1.4. 没有变量的代码是什么样子<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<h5>7.1.1.1.4. 步骤4：验证应用程序迭代<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h5>
+<p>成功的应用程序会满足用户需求</p>
+<p>成功的应用程序具有可维护性</p>
+<p>成功的应用程序的运行速度必须足够快</p>
+</div>
 </div>
 <div class="section" id="id7">
-<h3>7.1.5. 作为交通警察的开发人员<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<h4>7.1.1.2. 构建单个程序的工作流程<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h4>
+</div>
 </div>
 <div class="section" id="id8">
-<h3>7.1.6. 当杂乱无章时如何正确行事<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<h3>7.1.2. 真正的程序员会遵循标准<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id9">
+<h3>7.1.3. 编译后的工作<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id10">
+<h3>7.1.4. 没有变量的代码是什么样子<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id11">
+<h3>7.1.5. 作为交通警察的开发人员<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id12">
+<h3>7.1.6. 当杂乱无章时如何正确行事<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
 </div>
 <div class="section" id="sql">
 <h3>7.1.7. 摆脱对SQL的痴迷<a class="headerlink" href="#sql" title="永久链接至标题">¶</a></h3>
 </div>
-<div class="section" id="id9">
-<h3>7.1.8. 灵活掌控代码块<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id13">
+<h3>7.1.8. 灵活掌控代码块<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 </div>
-<div class="section" id="id10">
-<h3>7.1.9. 我的代码运行速度高于你的代码<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id14">
+<h3>7.1.9. 我的代码运行速度高于你的代码<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 </div>
-<div class="section" id="id11">
-<h3>7.1.10. 最佳实践快速索引<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id15">
+<h3>7.1.10. 最佳实践快速索引<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
 </div>
 <div class="section" id="pl-sql">
 <h3>7.1.11. PL/SQL开发人员资源<a class="headerlink" href="#pl-sql" title="永久链接至标题">¶</a></h3>
@@ -130,19 +177,25 @@
 <li><a class="reference internal" href="#">7. 阅读书摘 book excerpt</a><ul>
 <li><a class="reference internal" href="#oralce-pl-sql-best-practices-oralce-pl-sql">7.1. Oralce PL/SQL Best Practices Oralce PL/SQL最佳实践</a><ul>
 <li><a class="reference internal" href="#id1">7.1.1. 全局建议</a><ul>
-<li><a class="reference internal" href="#id2">7.1.1.1. 应用程序层面的工作流程</a></li>
-<li><a class="reference internal" href="#id3">7.1.1.2. 构建单个程序的工作流程</a></li>
+<li><a class="reference internal" href="#id2">7.1.1.1. 应用程序层面的工作流程</a><ul>
+<li><a class="reference internal" href="#id3">7.1.1.1.1. 步骤1：定义需求和标准</a></li>
+<li><a class="reference internal" href="#id4">7.1.1.1.2. 步骤2：建立应用程序基础</a></li>
+<li><a class="reference internal" href="#id5">7.1.1.1.3. 步骤3：创建下一个应用程序迭代</a></li>
+<li><a class="reference internal" href="#id6">7.1.1.1.4. 步骤4：验证应用程序迭代</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id4">7.1.2. 真正的程序员会遵循标准</a></li>
-<li><a class="reference internal" href="#id5">7.1.3. 编译后的工作</a></li>
-<li><a class="reference internal" href="#id6">7.1.4. 没有变量的代码是什么样子</a></li>
-<li><a class="reference internal" href="#id7">7.1.5. 作为交通警察的开发人员</a></li>
-<li><a class="reference internal" href="#id8">7.1.6. 当杂乱无章时如何正确行事</a></li>
+<li><a class="reference internal" href="#id7">7.1.1.2. 构建单个程序的工作流程</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8">7.1.2. 真正的程序员会遵循标准</a></li>
+<li><a class="reference internal" href="#id9">7.1.3. 编译后的工作</a></li>
+<li><a class="reference internal" href="#id10">7.1.4. 没有变量的代码是什么样子</a></li>
+<li><a class="reference internal" href="#id11">7.1.5. 作为交通警察的开发人员</a></li>
+<li><a class="reference internal" href="#id12">7.1.6. 当杂乱无章时如何正确行事</a></li>
 <li><a class="reference internal" href="#sql">7.1.7. 摆脱对SQL的痴迷</a></li>
-<li><a class="reference internal" href="#id9">7.1.8. 灵活掌控代码块</a></li>
-<li><a class="reference internal" href="#id10">7.1.9. 我的代码运行速度高于你的代码</a></li>
-<li><a class="reference internal" href="#id11">7.1.10. 最佳实践快速索引</a></li>
+<li><a class="reference internal" href="#id13">7.1.8. 灵活掌控代码块</a></li>
+<li><a class="reference internal" href="#id14">7.1.9. 我的代码运行速度高于你的代码</a></li>
+<li><a class="reference internal" href="#id15">7.1.10. 最佳实践快速索引</a></li>
 <li><a class="reference internal" href="#pl-sql">7.1.11. PL/SQL开发人员资源</a></li>
 </ul>
 </li>
