@@ -14,7 +14,7 @@ sphinx安装后sphinx-quickstart配置要越简单越好！否则在导入readth
    :numbered:
    :maxdepth: 3
    :caption: Contents:
-   
+
    docs/rst_primer
    code/programmer_growing_plan
    /docs/git install notes
@@ -22,10 +22,11 @@ sphinx安装后sphinx-quickstart配置要越简单越好！否则在导入readth
    /code/data_structure_algorithm_analysis
    code/slist learning notes
    code/book_excerpt
-   
-   
-   
-   
+   docs/7habits.rst
+
+
+
+
 
 Indices and tables
 ==================
