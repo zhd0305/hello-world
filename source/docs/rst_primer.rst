@@ -14,6 +14,7 @@ reStructuredText(rst)快速入门语法说明
 	| 行符号（换行符）
 	* 无序列表
 	#. 有序列表
+	**需要粗体显示的文本**
 
 
 
@@ -28,7 +29,7 @@ reStructuredText(rst)快速入门语法说明
 
 	::
 
-	   .. image:: images/ball1.gif
+	   .. image:: /images/ball1.gif
 
 
 * ``#`` with overline, for parts
