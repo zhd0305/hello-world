@@ -18,23 +18,15 @@ reStructuredText(rst)快速入门语法说明
 	**需要粗体显示的文本**
 
 
-.. text-align:center 文本居中？
+.. text-align:center 文本居中1？
 
-.. text-align:center::  文本居中？
+text-align:center::  文本居中2？
 
-text-align:center::  文本居中？
+text-align:center::  文本居中3？
 
 ::
 
-
-
-
-	插入图片
-
-	rst如下：
-
-	::
-
+	插入图片的语法rst如下：
 	   .. image:: /images/ball1.gif
 
 
